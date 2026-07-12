@@ -40,3 +40,14 @@ new_df['rpm_pct'] = (new_df['rpm'] / car_maxes['rpm'])
 new_df['load_pct'] = (new_df['load'] / car_maxes['load'])
 new_df['coolant_pct'] = (new_df['coolant_temp'] / 115.0)
 
+def compute_stress_level(r):
+    if r['coolant_pct'] > 0.88 and r['load_pct'] > 0.80:
+        return 2
+    elif r['rpm_pct'] > 0.80:
+        1
+    return 0
+
+new_df['stress_level'] = new_df.apply(compute_stress_level, axis=1)
+
+X = new_df[['rpm_pct', 'load_pct', 'coolant_pct', 'speed']]
+y = new_df['stress_level']
