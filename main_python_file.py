@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import  confusion_matrix, f1_score, accuracy_score, precision_score, recall_score, classification_report, mean_squared_error, r2_score
 
@@ -51,3 +50,11 @@ new_df['stress_level'] = new_df.apply(compute_stress_level, axis=1)
 
 X = new_df[['rpm_pct', 'load_pct', 'coolant_pct', 'speed']]
 y = new_df['stress_level']
+
+#comment line below if nessecary
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
+model = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+model.fit(X_train, y_train)
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(accuracy)
