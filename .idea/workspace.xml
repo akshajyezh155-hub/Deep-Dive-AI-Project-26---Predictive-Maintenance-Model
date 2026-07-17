@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecdfa1c5-58ae-46f6-be16-dc1e5dc78caf" name="Changes" comment="first commit 1">
-      <change beforePath="$PROJECT_DIR$/cleaning_and_preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaning_and_preprocessing.py" afterDir="false" />
+    <list default="true" id="ecdfa1c5-58ae-46f6-be16-dc1e5dc78caf" name="Changes" comment="removed &quot;printed 0-3&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_python_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_python_file.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -16,6 +25,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -23,6 +33,9 @@
     &quot;assignee&quot;: &quot;akshajyezh155-hub&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="fd68f93e-e206-45c7-816f-056acc142e95" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/akshajyezh155-hub/Deep-Dive-AI-Project-26---Predictive-Maintenance-Model&quot;,
@@ -43,14 +56,26 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.cleaning_and_preprocessing.executor": "Run",
     "Python.main_python_file.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm"
+    "last_opened_file_path": "C:/Users/aksha/PycharmProjects/PredictiveMaintainence",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\aksha\PycharmProjects\PredictiveMaintainence" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aksha\PycharmProjects\PredictiveMaintainence\" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -82,7 +107,39 @@
       <option name="project" value="LOCAL" />
       <updated>1783811236694</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="basic model made">
+      <option name="closed" value="true" />
+      <created>1784001158282</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1784001158282</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test file">
+      <option name="closed" value="true" />
+      <created>1784144619183</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1784144619183</updated>
+    </task>
+    <task id="LOCAL-00005" summary="printed 0-3">
+      <option name="closed" value="true" />
+      <created>1784145169156</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1784145169156</updated>
+    </task>
+    <task id="LOCAL-00006" summary="removed &quot;printed 0-3&quot;">
+      <option name="closed" value="true" />
+      <created>1784145263179</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784145263179</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,7 +176,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main-local" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -135,17 +192,11 @@
     <MESSAGE value="preprocessing commit" />
     <MESSAGE value="first commit" />
     <MESSAGE value="first commit 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit 1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main_python_file.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="basic model made" />
+    <MESSAGE value="test" />
+    <MESSAGE value="test file" />
+    <MESSAGE value="printed 0-3" />
+    <MESSAGE value="removed &quot;printed 0-3&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed &quot;printed 0-3&quot;" />
   </component>
 </project>
