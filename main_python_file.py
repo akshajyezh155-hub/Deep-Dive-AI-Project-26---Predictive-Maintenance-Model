@@ -1,9 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import SGDClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import log_loss
+from sklearn.ensemble import RandomForestClassifier
 
 df = pd.read_csv('exp1_14drivers_14cars_dailyRoutes.csv')
 
@@ -56,15 +54,38 @@ y = new_df['failure_type']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
 
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
+model = RandomForestClassifier(n_estimators=100, random_state=42, n_jobs=-1)
+model.fit(X_train, y_train)
 
-sgd_model = SGDClassifier(loss='log_loss', learning_rate='constant', eta0=0.01, random_state=42)
-classes = np.unique(y)
+y_probs = model.predict_proba(X_test)
+classes = model.classes_
 
-for epoch in range(1, 21):
-    sgd_model.partial_fit(X_train_scaled, y_train, classes=classes)
-    y_train_prob = sgd_model.predict_proba(X_train_scaled)
-    epoch_loss = log_loss(y_train, y_train_prob, labels=classes)
-    print(f"Epoch {epoch:02d} | Cross-Entropy Loss: {epoch_loss:.5f}")
+miss_costs = {0: 0, 1: 5000, 2: 2000, 3: 500, 4: 1000, 5: 300}
+class_costs = np.array([miss_costs.get(c, 0) for c in classes])
+expected_ignore_costs = np.dot(y_probs, class_costs)
+
+decisions = (expected_ignore_costs > 50).astype(int)
+
+wasted_inspections = 0
+prevented_failures = 0
+unprevented_failures_cost = 0
+total_preventive_cost = 0
+
+for true_val, decision in zip(y_test, decisions):
+    if decision == 1:
+        total_preventive_cost += 50
+        if true_val == 0:
+            wasted_inspections += 1
+        else:
+            prevented_failures += 1
+    else:
+        if true_val > 0:
+            unprevented_failures_cost += miss_costs.get(true_val, 0)
+
+total_loss = total_preventive_cost + unprevented_failures_cost
+
+print(f"Preventive Maintenance Cost: ${total_preventive_cost:,}")
+print(f"Wasted Inspections (False Alarms): {wasted_inspections}")
+print(f"Prevented Catastrophic Failures: {prevented_failures}")
+print(f"Cost of Missed Failures: ${unprevented_failures_cost}")
+print(f"Total Operational Loss: ${total_loss}")
